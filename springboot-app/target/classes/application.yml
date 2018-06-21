@@ -1,0 +1,18 @@
+server:
+  port: 8087
+  context-path: /app
+  
+spring:
+  application:
+    name: springboot-app
+    
+    
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springdb
+    username: root
+    password: admin
+    name: dataSource    
+management:
+    security:
+      enabled: false
