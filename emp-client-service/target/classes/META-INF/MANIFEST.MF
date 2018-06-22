@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: emp-client-service
+Implementation-Version: 1.0
+Built-By: verizon
+Implementation-Vendor-Id: com.demo
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://projects.spring.io/spring-boot/emp-client-s
+ ervice/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

@@ -3,6 +3,8 @@ package com.demo.spring;
 
 import java.util.HashMap;
 
+import javax.servlet.ServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +38,7 @@ public class EmpRestController {
 	@Autowired
 	EmpRepo empRepo;
 	
-	@RequestMapping(path="/info", method=RequestMethod.GET)
+	@RequestMapping(path="/info", method=RequestMethod.GET, produces ={MediaType.TEXT_PLAIN_VALUE})
 	public String info()
 	{
 		return "this is a Spring Restful Service";
@@ -50,7 +52,13 @@ public class EmpRestController {
 	
 	@RequestMapping(path="/emp", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity getEmp(@RequestParam("id") int id){
+	public ResponseEntity getEmp(@RequestParam("id") int id, ServletRequest req){
+		
+		System.out.println("Request Served by: local address " + req.getLocalAddr()
+				+"local port: " + req.getLocalPort() 
+				+ "local name : " + req.getLocalName());
+		
+		
 		
 		Emp e =empRepo.findOne(id);
 		
